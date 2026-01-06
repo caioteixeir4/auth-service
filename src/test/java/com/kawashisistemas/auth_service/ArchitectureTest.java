@@ -25,7 +25,7 @@ public class ArchitectureTest {
             .whereLayer("Controller").mayNotBeAccessedByAnyLayer()
             .whereLayer("Service").mayOnlyBeAccessedByLayers("Controller", "Infra")
             .whereLayer("Repository").mayOnlyBeAccessedByLayers("Service", "Model", "Infra")
-            .whereLayer("Dto").mayOnlyBeAccessedByLayers("Controller", "Service", "Model", "infra");
+            .whereLayer("Dto").mayOnlyBeAccessedByLayers("Controller", "Service", "Model", "Infra");
 
     // REGRA 2: Nomenclatura das Classes
     @ArchTest
