@@ -13,7 +13,7 @@ class AuthServiceApplicationTests {
 
     @Container
     @ServiceConnection
-    static OracleContainer oracle = new OracleContainer("gvenzl/oracle-free:21-slim-faststart");
+    static OracleContainer oracle = new OracleContainer("gvenzl/oracle-free:21-slim");
 
     @Test
     void contextLoads() {
