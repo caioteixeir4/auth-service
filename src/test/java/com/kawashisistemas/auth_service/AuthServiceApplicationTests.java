@@ -11,9 +11,9 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @Testcontainers
 class AuthServiceApplicationTests {
 
-    @Container
+	@Container
     @ServiceConnection
-    static OracleContainer oracle = new OracleContainer("gvenzl/oracle-free:21-slim");
+    static OracleContainer oracle = new OracleContainer("gvenzl/oracle-free:latest");
 
     @Test
     void contextLoads() {
