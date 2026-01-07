@@ -2,12 +2,21 @@ package com.kawashisistemas.auth_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
+import org.testcontainers.oracle.OracleContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
-@SpringBootTest
+@SpringBootTest(properties = "spring.jpa.hibernate.ddl-auto=create-drop")
+@Testcontainers
 class AuthServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+	@Container
+    @ServiceConnection
+    static OracleContainer oracle = new OracleContainer("gvenzl/oracle-free:latest");
 
+    @Test
+    void contextLoads() {
+        // Agora o contexto carrega usando o container acima!
+    }
 }
